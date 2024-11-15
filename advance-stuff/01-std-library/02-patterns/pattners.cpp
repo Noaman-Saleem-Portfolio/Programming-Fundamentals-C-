@@ -53,6 +53,39 @@ cout<<endl<<endl;
         }
         cout<<endl;
     }
+
+cout<<endl<<endl;
+/*  *****
+    ****
+    ***
+    **
+    *
+*/
+
+    int n=5;
+    for(int i=1;i<=n;i++){
+        for(int j=n;j>=i ;j--){
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+
+cout<<endl<<endl;
+/*  12345
+    1234
+    123
+    12
+    1
+*/
+
+    int n1=5;
+    for(int i=1;i<=n1;i++){
+        for(int j=n1;j>=i ;j--){
+            cout<<n1-j+1;
+        }
+        cout<<endl;
+    }
+
     return 0;
 
 }
