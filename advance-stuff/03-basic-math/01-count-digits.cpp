@@ -11,6 +11,6 @@ int main(){
         //count++;
         //num=num/10;
     //}
-    count =log10(num) ;
+    count =log10(num) + 1 ;
     cout<<count;
 }
