@@ -84,6 +84,62 @@ int lengthOfLL(Node* head){
     return count;
 }
 
+Node* insertAtPosition(Node* head,int data,int pos){
+    if(head == NULL){
+        if(pos==1){
+            Node* temp=new Node(data,head);
+            return temp;
+        } else{
+            return head;
+        }
+    } // head == NULL
+    
+    if(pos==1){
+        Node* temp=new Node(data,head);
+        return temp;
+    }
+    int count=0;
+    Node* mover=head;
+    while(mover != NULL){
+        count++;
+        if(count == (pos-1)){
+            Node* newNode = new Node(data);
+            newNode->next=mover->next;
+            mover->next=newNode;
+            break;
+        }
+        mover=mover->next;
+    }//while
+    return head;
+}
+
+Node* insertBeforeValue(Node* head,int data,int val){
+    if(head == NULL){
+       cout<<"headis NULL can't insert\n"; 
+       return NULL;
+    } // head == NULL
+    
+    //if value is at head
+    if(head->data == val){
+        Node* temp=new Node(data,head);
+        return temp;
+    }
+    bool found=false;
+    Node* mover=head;
+    while(mover->next != NULL){
+        if(mover->next->data == val){
+            Node* newNode = new Node(data);
+            newNode->next=mover->next;
+            mover->next=newNode;
+            found=true;
+            break;
+        }
+        mover=mover->next;
+    }//while
+    if(!found) cout<<"Value not present in LL\n";
+    return head;
+}
+
 int main() {
     vector<int> vec={2,4,6,8,10,12};
     Node* head = convertArrayToLL(vec);
@@ -98,8 +154,8 @@ int main() {
     cout<<"Link list : \n";
     showLL(head);
     
-     cout<<"\n\nInsert at Tail : \n";
-    insertAtTail(head,200);
+    cout<<"\n\nInsert at Tail : \n";
+    head = insertAtTail(head,200);
     
     cout<<"Link list : \n";
     showLL(head);
@@ -110,8 +166,26 @@ int main() {
     cout<<"\n\nSearch value 122 in LL : \n";
     cout<<checkIfPresent(head,122);
     
-     cout<<"\n\nCount elements in LL : \n";
+    cout<<"\n\nCount elements in LL : \n";
     cout<<lengthOfLL(head);
     
+    cout<<"\n\nInsert element 300 at position 3 : \n";
+    head = insertAtPosition(head,300,3);
+    
+    cout<<"Link list : \n";
+    showLL(head);
+    
+    cout<<"\n\nInsert element 70 at position 1 : \n";
+    head = insertAtPosition(head,70,1);
+    
+    cout<<"Link list : \n";
+    showLL(head);
+    
+    cout<<"\n\nInsert 66 before 6 : \n";
+    head = insertBeforeValue(head,66,6);
+    
+    cout<<"Link list : \n";
+    showLL(head);
+
     return 0;
 }
