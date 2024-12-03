@@ -20,7 +20,7 @@ Write the following programs :
 int firstArray[] = { 5, 10, 15, 20, 25 };
 int secondArray[] = { 5, 10, 15, 20, 25 };
 
-if each element in firstArray is equal to each element in secondArray
+if each element in firstArray is equal to each element in secondA rray
 then print "The arrays are the same."
 
 otherwise print "The arrays are not the same."
