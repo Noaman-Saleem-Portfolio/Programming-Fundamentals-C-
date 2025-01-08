@@ -21,7 +21,7 @@ void display(const int *arr, int size)
 {
     for (int i = 0; i < size; i++)
     {
-        cout << *(arr + 1) << " ";
+        cout << *(arr + i) << " ";
         // cout<<arr[i]<<" ";
     }
 }
@@ -30,7 +30,7 @@ void display2(const int arr[], int size)
 {
     for (int i = 0; i < size; i++)
     {
-        cout << *(arr + 1) << " ";
+        cout << *(arr + i) << " ";
         // cout<<arr[i]<<" ";
     }
 }
